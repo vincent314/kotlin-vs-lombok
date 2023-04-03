@@ -10,5 +10,8 @@ class TestNonNull {
         assertEquals("You said: Hello", echo("Hello"))
 
 //        echo(null) -> *Compilation error*
+
+//        var value:String? = ""
+//        echo(value)
     }
 }
