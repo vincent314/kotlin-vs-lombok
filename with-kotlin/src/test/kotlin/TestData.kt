@@ -10,6 +10,11 @@ class TestData {
         var lastname: String? = null,
     )
 
+    /**
+     * Immutable Data class
+     */
+    data class UserDataImmutable(val firstname: String?, val lastname: String?)
+
     @Test
     fun `should data class implement toString`() {
         val user1 = UserData()
@@ -25,5 +30,13 @@ class TestData {
         val user2 = UserData("John", "Doe")
 
         assertEquals(user1, user2)
+    }
+
+    @Test
+    fun `should create an immutable user`(){
+        val immutableUser = UserDataImmutable("François","Pignon")
+//        immutableUser.firstname = "Jean"
+
+        assertEquals("UserDataImmutable(firstname=François, lastname=Pignon)",immutableUser.toString())
     }
 }
